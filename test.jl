@@ -22,6 +22,9 @@ include("helper_functions.jl")
 
 include("pomdp_functions.jl")
 
+#size of the grids
+size_x=11
+size_y=11
 
 println("Random Ship transition: ")
 
@@ -59,4 +62,3 @@ for action in [:right, :left, :down, :up, :predict]
         end
     end
 end
-
