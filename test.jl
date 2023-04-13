@@ -1,8 +1,26 @@
+# first import the POMDPs.jl interface
+using POMDPs
+# POMDPModelTools has tools that help build the MDP definition
+using POMDPModelTools
+# POMDPPolicies provides functions to help define simple policies
+using POMDPPolicies
+# POMDPSimulators provide functions for running MDP simulations
+using POMDPSimulators
+using QuickPOMDPs, POMDPSimulators, QMDP
+using SARSOP
+using JLD2
+using BeliefUpdaters
+using Random
+using FiniteHorizonPOMDPs
+
+
 include("list_states_for_random_ship.jl")   
 include("list_states_for_hunting_ship.jl")
 include("list_states_for_shadowing_ship.jl")
 include("gridworld.jl")
 include("helper_functions.jl")
+
+include("pomdp_functions.jl")
 
 
 println("Random Ship transition: ")
@@ -29,3 +47,16 @@ for (x,y) in zip(list_of_states_shadowing, list_of_probas_shadowing)
     println(x,y)
 end
 println("Total Probability: ", sum(list_of_probas_shadowing))
+
+
+println("All transition functions together: ")
+for action in [:right, :left, :down, :up, :predict]
+    for ship_type in ["shadow", "hunt", "random"]
+        for i=1:2, j=1:2, k=1:2, l=1:2
+    
+        println(ship_type," ", action,[i,j,k,l])
+        display(transition_function(GridWorldState(i,j,k,l,ship_type, false), action))#3
+        end
+    end
+end
+

@@ -13,18 +13,18 @@ function list_states_for_random_ship(p_updated_x, p_updated_y, hs_x, hs_y, ship_
 
     no_move_state = GridWorldState(p_updated_x, p_updated_y, hs_x, hs_y, ship_type, game_is_done)
 
-#     repeated_list_of_possible_states = []
+    # repeated_list_of_possible_states = []
 
-#     for a_state in random_ship_neighbors
-#         if !inbounds(a_state.s_x, a_state.s_y)
-#             #if we uncomment this there is possiblity that ship stays in the same spot
-#             #push!(repeated_list_of_possible_states, no_move_state)
-#         else
-#             push!(repeated_list_of_possible_states, a_state)
-#         end
-#     end
-#     list_of_possible_states = unique(repeated_list_of_possible_states)
-#     return list_of_possible_states
+    # for a_state in random_ship_neighbors
+    #     if !inbounds(a_state.s_x, a_state.s_y)
+    #         #if we uncomment this there is possiblity that ship stays in the same spot
+    #         #push!(repeated_list_of_possible_states, no_move_state)
+    #     else
+    #         push!(repeated_list_of_possible_states, a_state)
+    #     end
+    # end
+    # list_of_possible_states = unique(repeated_list_of_possible_states)
+    # return list_of_possible_states
 
 
 
